@@ -7,8 +7,11 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/orders")
+@CrossOrigin(origins = "http://localhost:3000")
 public class OrderController {
 
     @Autowired
@@ -24,6 +27,12 @@ public class OrderController {
     public ResponseEntity<Order> getOrder(@PathVariable Long orderId) {
         Order order = orderService.getOrder(orderId);
         return new ResponseEntity<>(order, HttpStatus.OK);
+    }
+
+    @GetMapping
+    public ResponseEntity<List<Order>> getAllOrders() {
+        List<Order> orders = orderService.getAllOrders();
+        return new ResponseEntity<>(orders, HttpStatus.OK);
     }
 
     @PutMapping("/{orderId}")

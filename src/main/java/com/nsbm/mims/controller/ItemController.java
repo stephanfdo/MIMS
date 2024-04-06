@@ -7,8 +7,11 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/items")
+@CrossOrigin(origins = "http://localhost:3000")
 public class ItemController {
 
     @Autowired
@@ -24,6 +27,12 @@ public class ItemController {
     public ResponseEntity<Item> getItem(@PathVariable Long itemId) {
         Item item = itemService.getItem(itemId);
         return new ResponseEntity<>(item, HttpStatus.OK);
+    }
+
+    @GetMapping
+    public ResponseEntity<List<Item>> getAllItems() {
+        List<Item> items = itemService.getAllItems();
+        return new ResponseEntity<>(items, HttpStatus.OK);
     }
 
     @PutMapping("/{itemId}")

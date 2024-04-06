@@ -7,8 +7,11 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/suppliers")
+@CrossOrigin(origins = "http://localhost:3000")
 public class SupplierController {
 
     @Autowired
@@ -24,6 +27,12 @@ public class SupplierController {
     public ResponseEntity<Supplier> getSupplier(@PathVariable Long supplierId) {
         Supplier supplier = supplierService.getSupplier(supplierId);
         return new ResponseEntity<>(supplier, HttpStatus.OK);
+    }
+
+    @GetMapping
+    public ResponseEntity<List<Supplier>> getAllSuppliers() {
+        List<Supplier> suppliers = supplierService.getAllSuppliers();
+        return new ResponseEntity<>(suppliers, HttpStatus.OK);
     }
 
     @PutMapping("/{supplierId}")

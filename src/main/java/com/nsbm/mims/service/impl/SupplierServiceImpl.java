@@ -6,6 +6,8 @@ import com.nsbm.mims.service.SupplierService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class SupplierServiceImpl implements SupplierService {
 
@@ -39,5 +41,10 @@ public class SupplierServiceImpl implements SupplierService {
     @Override
     public void deleteSupplier(Long supplierId) {
         supplierRepository.deleteById(supplierId);
+    }
+
+    @Override
+    public List<Supplier> getAllSuppliers() {
+        return supplierRepository.findAll(); // Assuming findAll() fetches all suppliers from the repository
     }
 }

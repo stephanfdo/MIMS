@@ -6,6 +6,8 @@ import com.nsbm.mims.service.OrderService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class OrderServiceImpl implements OrderService {
 
@@ -39,5 +41,10 @@ public class OrderServiceImpl implements OrderService {
     @Override
     public void deleteOrder(Long orderId) {
         orderRepository.deleteById(orderId);
+    }
+
+    @Override
+    public List<Order> getAllOrders() {
+        return orderRepository.findAll(); // Assuming findAll() fetches all orders from the repository
     }
 }

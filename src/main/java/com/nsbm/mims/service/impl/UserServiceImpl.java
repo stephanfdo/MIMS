@@ -6,6 +6,8 @@ import com.nsbm.mims.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class UserServiceImpl implements UserService {
 
@@ -39,4 +41,11 @@ public class UserServiceImpl implements UserService {
     public void deleteUser(Long userId) {
         userRepository.deleteById(userId);
     }
+
+
+    @Override
+    public List<User> getAllUsers() {
+        return userRepository.findAll();
+    }
+
 }

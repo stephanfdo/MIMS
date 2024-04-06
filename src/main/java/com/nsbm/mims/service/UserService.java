@@ -2,6 +2,8 @@ package com.nsbm.mims.service;
 
 import com.nsbm.mims.model.User;
 
+import java.util.List;
+
 public interface UserService {
     User createUser(User user);
 
@@ -10,4 +12,6 @@ public interface UserService {
     User updateUser(Long userId, User userDetails);
 
     void deleteUser(Long userId);
+
+    List<User> getAllUsers();
 }

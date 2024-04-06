@@ -2,6 +2,8 @@ package com.nsbm.mims.service;
 
 import com.nsbm.mims.model.Order;
 
+import java.util.List;
+
 public interface OrderService {
     Order createOrder(Order order);
 
@@ -10,4 +12,6 @@ public interface OrderService {
     Order updateOrder(Long orderId, Order orderDetails);
 
     void deleteOrder(Long orderId);
+
+    List<Order> getAllOrders();
 }

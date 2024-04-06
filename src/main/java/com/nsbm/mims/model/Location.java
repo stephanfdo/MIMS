@@ -6,26 +6,15 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 
 @Entity
-public class Item {
+public class Location {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String name;
-    private String itemCategory;
-    private double price;
+    private String description;
 
-
-    public Item() {
+    public Location() {
     }
-
-    public String getItemCategory() {
-        return itemCategory;
-    }
-
-    public void setItemCategory(String itemCategory) {
-        this.itemCategory = itemCategory;
-    }
-
 
     public Long getId() {
         return id;
@@ -43,11 +32,13 @@ public class Item {
         this.name = name;
     }
 
-    public double getPrice() {
-        return price;
+    public String getDescription() {
+        return description;
     }
 
-    public void setPrice(double price) {
-        this.price = price;
+    public void setDescription(String description) {
+        this.description = description;
     }
+
+    // constructors, getters, setters
 }

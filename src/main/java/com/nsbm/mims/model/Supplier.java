@@ -12,9 +12,19 @@ public class Supplier {
     private Long id;
     private String name;
     private String contactNumber;
+    private String location;
+
 
     public Supplier() {
     }
+    public String getLocation() {
+        return location;
+    }
+
+    public void setLocation(String location) {
+        this.location = location;
+    }
+
 
     public Long getId() {
         return id;

@@ -6,6 +6,8 @@ import com.nsbm.mims.service.ItemService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class ItemServiceImpl implements ItemService {
 
@@ -39,5 +41,10 @@ public class ItemServiceImpl implements ItemService {
     @Override
     public void deleteItem(Long itemId) {
         itemRepository.deleteById(itemId);
+    }
+
+    @Override
+    public List<Item> getAllItems() {
+        return itemRepository.findAll();
     }
 }
