@@ -12,6 +12,7 @@ public class AuthServiceImpl implements AuthService {
     @Autowired
     private AuthRepository authRepository;
 
+    //find user by email service
     @Override
     public User findByEmail(String email) {
         return authRepository.findByEmail(email);

@@ -3,7 +3,7 @@ package com.nsbm.mims.service;
 import com.nsbm.mims.model.User;
 
 import java.util.List;
-
+//user services
 public interface UserService {
     User createUser(User user);
 

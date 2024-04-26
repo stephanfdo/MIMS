@@ -7,6 +7,10 @@ import jakarta.persistence.Id;
 
 @Entity
 public class Location {
+
+    //location variables
+
+    //auto increment id
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;

@@ -7,6 +7,8 @@ import jakarta.persistence.Id;
 
 @Entity
 public class Item {
+
+    //item variables
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -18,6 +20,7 @@ public class Item {
     public Item() {
     }
 
+    //getters and setters
     public String getItemCategory() {
         return itemCategory;
     }

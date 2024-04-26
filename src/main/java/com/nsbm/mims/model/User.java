@@ -5,6 +5,8 @@ import jakarta.persistence.*;
 @Entity
 @Table(name="users")
 public class User {
+    //user variables
+    //auto increment id
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;

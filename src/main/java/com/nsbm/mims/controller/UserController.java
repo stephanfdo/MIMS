@@ -17,12 +17,13 @@ public class UserController {
     @Autowired
     private UserService userService;
 
+    //create user controller
     @PostMapping
     public ResponseEntity<User> createUser(@RequestBody User user) {
         User newUser = userService.createUser(user);
         return new ResponseEntity<>(newUser, HttpStatus.CREATED);
     }
-
+//det all details of all users
 
     @GetMapping
     public ResponseEntity<List<User>> getAllUsers() {
@@ -30,18 +31,21 @@ public class UserController {
         return new ResponseEntity<>(users, HttpStatus.OK);
     }
 
+    //get details of selected user
     @GetMapping("/{userId}")
     public ResponseEntity<User> getUser(@PathVariable Long userId) {
         User user = userService.getUser(userId);
         return new ResponseEntity<>(user, HttpStatus.OK);
     }
 
+    //update user details
     @PutMapping("/{userId}")
     public ResponseEntity<User> updateUser(@PathVariable Long userId, @RequestBody User userDetails) {
         User updatedUser = userService.updateUser(userId, userDetails);
         return new ResponseEntity<>(updatedUser, HttpStatus.OK);
     }
 
+    //delete selected user
     @DeleteMapping("/{userId}")
     public ResponseEntity<?> deleteUser(@PathVariable Long userId) {
         userService.deleteUser(userId);

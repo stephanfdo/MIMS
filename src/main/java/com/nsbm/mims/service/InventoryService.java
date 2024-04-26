@@ -5,6 +5,7 @@ import com.nsbm.mims.model.Inventory;
 
 import java.util.List;
 
+//inventory services
 public interface InventoryService {
     Inventory addToInventory(Inventory inventory);
     void removeFromInventory(Long id);

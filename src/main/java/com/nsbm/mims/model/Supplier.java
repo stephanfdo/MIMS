@@ -7,6 +7,9 @@ import jakarta.persistence.Id;
 
 @Entity
 public class Supplier {
+
+    //supplier variables
+    //auto increment id
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;

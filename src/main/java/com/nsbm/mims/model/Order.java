@@ -5,6 +5,9 @@ import jakarta.persistence.*;
 @Entity
 @Table(name ="orders")
 public class Order {
+
+    //order variables
+    //auto increment id
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;

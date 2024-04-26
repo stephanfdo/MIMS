@@ -14,16 +14,19 @@ public class LocationServiceImpl implements LocationService {
     @Autowired
     private LocationRepository locationRepository;
 
+    //create location
     @Override
     public Location createLocation(Location location) {
         return locationRepository.save(location);
     }
 
+    //view selected location
     @Override
     public Location getLocation(Long locationId) {
         return locationRepository.findById(locationId).orElse(null);
     }
 
+    //update location details
     @Override
     public Location updateLocation(Long locationId, Location locationDetails) {
         Location location = getLocation(locationId);
@@ -38,11 +41,13 @@ public class LocationServiceImpl implements LocationService {
         return locationRepository.save(location);
     }
 
+    //delete location
     @Override
     public void deleteLocation(Long locationId) {
         locationRepository.deleteById(locationId);
     }
 
+    //view all details of location service
     @Override
     public List<Location> getAllLocations() {
         return locationRepository.findAll(); // Assuming findAll() fetches all locations from the repository

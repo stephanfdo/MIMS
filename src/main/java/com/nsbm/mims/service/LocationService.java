@@ -4,6 +4,7 @@ import com.nsbm.mims.model.Location;
 
 import java.util.List;
 
+//location services
 public interface LocationService {
     Location createLocation(Location location);
     Location getLocation(Long locationId);

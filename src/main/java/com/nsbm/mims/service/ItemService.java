@@ -4,6 +4,7 @@ import com.nsbm.mims.model.Item;
 
 import java.util.List;
 
+//item services
 public interface ItemService {
     Item createItem(Item item);
 

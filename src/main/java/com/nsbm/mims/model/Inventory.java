@@ -7,14 +7,22 @@ import jakarta.persistence.Id;
 
 @Entity
 public class Inventory {
+
+    //inventory variables
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private Long itemId;
     private int quantity;
 
+    /*@ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "item_id", referencedColumnName = "id")
+    private Item item;
+     */
     public Inventory() {
     }
+
+    //getters and setters
 
     public Long getId() {
         return id;

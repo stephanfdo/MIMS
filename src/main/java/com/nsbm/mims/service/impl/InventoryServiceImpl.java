@@ -13,21 +13,25 @@ public class InventoryServiceImpl implements InventoryService {
     @Autowired
     private InventoryRepository inventoryRepository;
 
+    //create inventory service
     @Override
     public Inventory addToInventory(Inventory inventory) {
         return inventoryRepository.save(inventory);
     }
 
+    //delete inventory item service
     @Override
     public void removeFromInventory(Long id) {
         inventoryRepository.deleteById(id);
     }
 
+    //view inventory service
     @Override
     public List<Inventory> viewInventory() {
         return inventoryRepository.findAll();
     }
 
+    //update inventory service
     @Override
     public Inventory updateInventory(Long itemId, Inventory inventoryDetails) {
         Inventory existingItem = inventoryRepository.findByItemId(itemId);

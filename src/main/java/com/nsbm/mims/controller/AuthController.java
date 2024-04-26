@@ -17,6 +17,7 @@ public class AuthController {
     @Autowired
     private AuthService authService;
 
+    //authentication controller checking email and password
     @PostMapping("/login")
     public ResponseEntity<Map<String, String>> login(@RequestBody Map<String, String> credentials) {
         String email = credentials.get("email");
